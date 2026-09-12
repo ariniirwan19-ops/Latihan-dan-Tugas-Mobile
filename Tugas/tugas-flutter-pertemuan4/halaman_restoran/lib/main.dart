@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
 class DetailRestoranPage extends StatelessWidget {
   const DetailRestoranPage({super.key});
 
-  // Data dummy menu populer
   final List<Map<String, String>> menuList = const [
     {
       'nama': 'Grilled Sirloin Steak',
@@ -45,9 +44,6 @@ class DetailRestoranPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ===================================================
-      // 1. AppBar dengan judul nama restoran + tombol share
-      // ===================================================
       appBar: AppBar(
         title: const Text('La Brasserie Bistro'),
         backgroundColor: Colors.black.withOpacity(0.85),
@@ -66,9 +62,6 @@ class DetailRestoranPage extends StatelessWidget {
         ],
       ),
 
-      // ===================================================
-      // 7. FloatingActionButton untuk reservasi
-      // ===================================================
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -85,9 +78,6 @@ class DetailRestoranPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // ===================================================
-            // 2. Gambar restoran fullwidth (Image.network + BoxFit.cover)
-            // ===================================================
             SizedBox(
               width: double.infinity,
               height: 220,
@@ -106,9 +96,6 @@ class DetailRestoranPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // ===================================================
-                  // 3. Container info utama: nama, rating, kategori, alamat
-                  // ===================================================
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(16),
@@ -186,9 +173,6 @@ class DetailRestoranPage extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  // ===================================================
-                  // 4. Row untuk 3 statistik (Column di dalam Row)
-                  // ===================================================
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 12),
@@ -229,9 +213,6 @@ class DetailRestoranPage extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  // ===================================================
-                  // 5. Deskripsi restoran (maxLines + overflow)
-                  // ===================================================
                   const Text(
                     'Deskripsi',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -259,11 +240,6 @@ class DetailRestoranPage extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 8),
-
-                  // ===================================================
-                  // 6. Section 'Menu Populer' dengan minimal 3 Card
-                  //    (Stack: gambar + nama + harga)
-                  // ===================================================
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -296,7 +272,6 @@ class DetailRestoranPage extends StatelessWidget {
                     ),
                   ),
 
-                  // Ruang tambahan agar tidak tertutup FAB
                   const SizedBox(height: 80),
                 ],
               ),
@@ -307,7 +282,6 @@ class DetailRestoranPage extends StatelessWidget {
     );
   }
 
-  // Widget bantu untuk item statistik (dipakai dalam Row)
   Widget _buildStatItem(
       {required IconData icon, required String value, required String label}) {
     return Column(
@@ -336,9 +310,6 @@ class DetailRestoranPage extends StatelessWidget {
   }
 }
 
-// =====================================================
-// Widget Card Menu (Stack: gambar + overlay nama + harga)
-// =====================================================
 class MenuCard extends StatelessWidget {
   final String imageUrl;
   final String nama;
@@ -358,7 +329,6 @@ class MenuCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Stack: gambar + tombol favorit (icon)
           Stack(
             children: [
               ClipRRect(
