@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../auth/login_page.dart';  // ✅ Relative import
+import '../auth/login_page.dart';  
 
 class Flashscreen extends StatefulWidget {
-  const Flashscreen({super.key});  // ✅ Constructor = nama class
+  const Flashscreen({super.key});  
 
   @override
   State<Flashscreen> createState() => _FlashscreenState();
@@ -13,10 +13,10 @@ class _FlashscreenState extends State<Flashscreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {  // ✅ Tambah const
+    Timer(const Duration(seconds: 3), () {  
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const LoginPage()),  // ✅ Tambah const
+        MaterialPageRoute(builder: (context) => const LoginPage()),  
       );
     });
   }
@@ -27,7 +27,7 @@ class _FlashscreenState extends State<Flashscreen> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(  // ✅ Tambah const
+        decoration: const BoxDecoration(  
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -44,7 +44,7 @@ class _FlashscreenState extends State<Flashscreen> {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
               ),
-              child: const Icon(Icons.check, color: Colors.indigo),  // ✅ Tambah const & color
+              child: const Icon(Icons.check, color: Colors.indigo),  
             ),
             const SizedBox(height: 16),
             const Text(

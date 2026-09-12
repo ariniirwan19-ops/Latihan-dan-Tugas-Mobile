@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/flash_screen.dart';  // ✅ "widgets" (jamak)
+import 'widgets/flash_screen.dart';  
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {

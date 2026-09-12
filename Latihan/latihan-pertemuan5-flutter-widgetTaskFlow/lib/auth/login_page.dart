@@ -56,7 +56,6 @@ class LoginPage extends StatelessWidget {
                 
                 const SizedBox(height: 40),
 
-                // Form
                 Form(
                   key: _globalKey,
                   child: Column(
@@ -115,7 +114,6 @@ class LoginPage extends StatelessWidget {
                                 backgroundColor: Colors.green,
                               ),
                             );
-                            // Nanti di sini bisa ditambahkan Navigator.push ke HomePage
                           }
                         },
                         child: const Text(
@@ -162,7 +160,6 @@ class LoginPage extends StatelessWidget {
 
                       const SizedBox(height: 20),
 
-                      // ✅ BAGIAN INI SUDAH DIPERBAIKI MENGGUNAKAN IMAGE.ASSET
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -172,11 +169,10 @@ class LoginPage extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Image.asset(
-                                  'asset/google.jpeg', // Pastikan nama file sesuai
+                                  'asset/google.jpeg', 
                                   width: 24,
                                   height: 24,
                                   errorBuilder: (context, error, stackTrace) {
-                                    // Fallback jika gambar belum dimasukkan
                                     return const Icon(Icons.g_mobiledata, size: 24, color: Colors.red);
                                   }
                                 ), 
@@ -192,11 +188,10 @@ class LoginPage extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Image.asset(
-                                  'asset/facebook.jpeg', // Pastikan nama file sesuai
+                                  'asset/facebook.jpeg', 
                                   width: 24,
                                   height: 24,
                                   errorBuilder: (context, error, stackTrace) {
-                                    // Fallback jika gambar belum dimasukkan
                                     return const Icon(Icons.facebook, color: Colors.blue, size: 24);
                                   }
                                 ),
