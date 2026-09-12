@@ -1,56 +1,66 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import '../auth/login_page.dart';  // ✅ Relative import
 
-class FlashScreen extends StatefulWidget {
-  const new({super.key});
+class Flashscreen extends StatefulWidget {
+  const Flashscreen({super.key});  // ✅ Constructor = nama class
 
   @override
-  State<FlashScreen> createState() => _FlashScreenState();
+  State<Flashscreen> createState() => _FlashscreenState();
 }
 
-class _FlashScreenState extends State<FlashScreen> {
+class _FlashscreenState extends State<Flashscreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 3), () {  // ✅ Tambah const
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginPage()),  // ✅ Tambah const
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(  // ✅ Tambah const
           gradient: LinearGradient(
             begin: Alignment.topLeft,
-            end: AlignmentGeometry.bottomRight,
+            end: Alignment.bottomRight,
             colors: [Color(0xFF6366F1), Color(0xFF4F46E5), Color(0xFF4338CA)],
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, //posisi kotak ke tengah
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: 65,
               width: 65,
               decoration: BoxDecoration(
-                color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
               ),
-              child: Icon(Icons.check),
+              child: const Icon(Icons.check, color: Colors.indigo),  // ✅ Tambah const & color
             ),
-
-            SizedBox(height: 15), // ini untuk jarak antara kotak ke text
-
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               "Task Flow",
-              style: TextStyle(fontSize: 30, color: Colors.white),
+              style: TextStyle(fontSize: 25, color: Colors.white),
             ),
-
-            SizedBox(height: 15), // ini untuk jarak antara text ke text
-
-            Text(
-              "Organize Your Task \n Achieve Your Goals",
-              style: TextStyle(fontSize: 20, color: Colors.white),
+            const SizedBox(height: 10),
+            const Text(
+              "Organize Your Task \nAchieve Your Goals",
+              style: TextStyle(color: Colors.white),
             ),
-
-            SizedBox(height: 60), // ini untuk jarak antara kotak ke text
-
-            CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+            const SizedBox(height: 60),
+            const CircularProgressIndicator(
+              strokeWidth: 2,
+              color: Colors.white,
+            ),
           ],
         ),
       ),

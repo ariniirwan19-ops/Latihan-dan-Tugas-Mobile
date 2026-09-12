@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:widget/widgets/flash_screen.dart'; // Pastikan nama package sesuai pubspec.yaml
+import 'widgets/flash_screen.dart';  // ✅ "widgets" (jamak)
+void main() => runApp(const MyApp());
 
-void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: FlashScreen(),
-    );
-  }
+  Widget build(BuildContext context) =>
+      const MaterialApp(
+        debugShowCheckedModeBanner: false, 
+        home: Scaffold(body: Flashscreen(),)
+  );
 }
